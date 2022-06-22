@@ -25,9 +25,10 @@ change_polybar() {
 
 # rofi --------------------------------------
 change_rofi() {		
-	sed -i -e "s/STYLE=.*/STYLE=\"$1\"/g" 						${rofi_path}/bin/music ${rofi_path}/bin/network ${rofi_path}/bin/screenshot ${rofi_path}/bin/runner
+        sed -i -e "s/STYLE=.*/STYLE=\"$1\"/g" 						${rofi_path}/bin/music ${rofi_path}/bin/network ${rofi_path}/bin/screenshot ${rofi_path}/bin/runner
 	sed -i -e "s/STYLE=.*/STYLE=\"$1\"/g" 						${rofi_path}/bin/launcher ${rofi_path}/bin/powermenu
-	sed -i -e "s/font:.*/font:				 	\"$2\";/g" 		${rofi_path}/"$1"/font.rasi
+
+      	sed -i -e "s/font:.*/font:				 	\"$4\";/g" 		${rofi_path}/"$1"/font.rasi
 
 	sed -i -e "s/font:.*/font:				 	\"$2\";/g" 			${rofi_path}/dialogs/askpass.rasi ${rofi_path}/dialogs/confirm.rasi
 	sed -i -e "s/border:.*/border:					$3;/g" 			${rofi_path}/dialogs/askpass.rasi ${rofi_path}/dialogs/confirm.rasi
@@ -277,10 +278,10 @@ notify_user
 set_wallpaper 'tealize.png'
 
 # funct STYLE FONT
-change_polybar 'tealize' 'Iosevka Nerd Font:size=10;3' && "$polybar_path"/launch.sh
+change_polybar 'keay' 'Iosevka Nerd Font:size=10;3' && "$polybar_path"/launch.sh
 
 # funct STYLE FONT BORDER BORDER-RADIUS ICON (Change colors in funct)
-change_rofi 'tealize' 'Iosevka 10' '0px' '0px' 'Papirus-Apps'
+change_rofi 'keay' 'Iosevka 10' '0px' '0px' 'Papirus-Apps'
 
 # funct STYLE (network manager applet)
 change_nm 'tealize'
